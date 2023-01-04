@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class - 06 - Form</title>
+</head>
+<style>
+    body {
+       text-align: center;
+    }
+    label {
+        width: 80px;
+        display: inline-block;
+        text-align: right;
+    }
+</style>
+<body>
+    <header>
+    <h1>CRIE SEU PERFIL</h1>
+    </header>
+    <main> 
+    <form action="" method="get">
+        <fieldset> 
+            <legend><strong>DADOS PESSOAIS</strong></legend>
+                <section>
+                   <label for="name" id>Nome:</label>
+                   <input type="text" id="name" placeholder="Digite seu nome" autocomplete="name" autofocus>
+                </section>
+            <br>
+            <section>
+                <label for="Nascismento">Nascismento:</label>
+                <input type="date" name="Nascismento" id="Nascismento">  
+            </section>
+            <br>
+            <section>
+                <label for="RG" id>RG:</label>
+                <input type="text" id="rg" placeholder="Digite seu RG" >
+             </section>
+             <br>
+             <section>
+                <label for="">CPF:</label>
+                <input type="text" pattern="[0-9]{11}" placeholder="Informe seu CPF"> 
+             </section>
+             <br>
+             <section>
+                <input type="radio" name="term" id="Masculino" checked>
+                <label for="Masculino">Masculino</label>
+            </section>
+            <br>
+            <section>
+                <input type="radio" name="term" id="feminino">
+                <label for="feminino">Feminino</label>
+            </section>
+        
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><strong>LINGUAGENS DE DOMÍNIO</strong> </legend>
+            <section>
+                <input type="checkbox" id="HTML">
+                <label for="">HTML</label>
+            </section>
+            <br>
+            <section>
+                <input type="checkbox" id="CSS">
+                <label for="">CSS</label>
+            </section>
+            <br>
+            <section>
+                <input type="checkbox" id="JavaScript">
+                <label for="">JavaScript</label>
+            </section>
+            <br>
+            <section>
+                <input type="checkbox" id="SQL">
+                <label for="">SQL</label>
+            </section>
+        </fieldset>
+         <br>
+        <fieldset>
+            <legend><strong>DADOS DE LOGIN</strong> </legend>
+            <section>
+                <label for="">Email:</label>
+                <input type="email" placeholder="fulano@email.com">
+             </section>
+                <br>
+                <section>
+              <label for="">Senha:</label>
+              <input type="password" name="senha" minlength="8" placeholder="Mínimo de 8 caracteres">
+          </section>
+          <br>
+          <section>
+            <label for="Foto">Foto:</label>
+            <input type="file" accept="image/*" id="foto">
+            </section>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend> <strong>OBSERVAÇÕES</strong></legend>
+            <section>
+            <textarea name="" id="" cols="45" rows="10" maxlength="450" placeholder="Faça observações sbre seu perfil"></textarea>
+        </section>
+        </fieldset>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+</main>
+</body>
+</html>

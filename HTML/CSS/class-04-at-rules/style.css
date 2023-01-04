@@ -1,0 +1,70 @@
+@charset "utf-08";
+@import url("../class-02-box-model/style.css");
+@font-face {
+    font-family: CaptureIt;
+    src: url("../class-04-at-rules/font/Capture\ it.ttf");
+}
+
+article {
+    display: flex;
+    gap: 48px;
+
+    animation-name: MyAnimation;
+    animation-duration: 2000ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+
+
+}
+
+h3 {
+    font-family: CaptureIt;
+}
+
+h4{
+    font-family: GeminiMoon;
+}
+@font-face {
+    font-family: GeminiMoon;
+    src: url(../class-04-at-rules/font/gemini_moon/Gemini\ Moon.otf);
+}
+
+@media (max-width: 500px) {
+    article {
+        display: block;
+    }
+}
+
+h2 {
+    margin-top: 6px;
+    animation-name: MyAnimationRotate;
+    animation-duration: 2000ms;
+    animation-delay: 3s;
+}
+p {
+    margin-top: 8px;
+}
+
+@keyframes MyAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes MyAnimationRotate {
+    to {
+        transform: rotateZ(0deg);
+    }
+
+    from {
+        transform: rotateZ(360deg);
+    }
+}

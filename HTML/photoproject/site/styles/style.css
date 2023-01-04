@@ -1,0 +1,201 @@
+:root {
+    font-size: 6.25%;
+    /* scroll-behavior: smooth; */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#HomeMenu, #GaleriaMenu, #ContatoMenu {
+color: rgb(255, 255, 255);
+}
+
+body {
+    object-fit: cover;
+    object-position: center;
+    height: 100vh;
+    width: 100%;
+} 
+
+header {
+    width: 100%;
+    height: 100%;
+    background: black ;
+    padding: 32rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    object-fit: cover ;
+    object-position: center;
+} 
+
+header img {
+    width: 240rem ;
+    height: 240rem;
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 340rem;
+    font-size: 24rem;
+    list-style: none;
+}
+
+nav ul li {
+    padding: 8rem;
+    border-radius: 4rem; 
+    
+}
+
+nav ul li:hover {
+background: #7a77d1;
+}
+
+h1 {
+    font-size: 88rem;
+    color: rgb(0, 92, 173);
+    text-shadow:  1rem 1rem 1rem black;
+    object-fit: cover ;
+    object-position: center;
+}
+ 
+h2 {
+    font-size: 40rem;
+    color: rgb(0, 32, 173);
+    text-shadow: 1rem 1rem 1rem black ;  
+}
+
+p {
+    margin: 16rem;
+    font-size: 32rem;
+    color: black;
+    width: 100%;
+    height: 100%;
+}
+
+h1:hover {
+    color: rgb(0, 0, 0);
+    text-shadow: 1rem 1rem 1rem rgb(80, 31, 255);
+}
+
+h2:hover {
+color: rgb(0, 0, 0);
+text-shadow: 1rem 1rem 1rem rgb(0, 94, 148);
+}
+
+.ul, .li {
+font-size: 32rem;
+list-style: disc;
+display: inline-block;
+justify-content: space-between;
+padding-left: 42rem;
+} 
+
+main {
+    
+    padding: 42rem;
+    background: white;
+    justify-content: space-between;
+    align-items: center;
+    animation: TopDownOpacityAnimation 1000ms;
+}
+
+img {
+    padding: 16rem;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover ;
+    object-position: center;
+    animation: TopDownOpacityAnimation 1000ms;
+}
+
+
+
+footer {
+    padding: 28rem;
+    height: 100%;
+    width: 100%;
+    background: black;
+    color: aliceblue;
+    font-size: 16rem;
+    text-align: center;
+    font-size: 28rem;
+
+    animation: TopDownOpacityAnimation 1000ms;
+}
+
+.Contato {
+    font-size: 50rem;
+    
+}
+
+.Email {
+    font-size: 35rem;
+}
+
+.celular {
+    font-size: 35rem;
+}
+
+.Endereço {
+    font-size: 35rem;
+}
+
+.contact {
+    font-size: 30rem;
+}
+
+.galeria, img {
+    font-size: 50rem;
+   
+    
+}
+
+iframe {
+    width: 100%;
+}
+
+h3 {
+    padding-left: 23rem;
+    font-size: 40rem;
+    color: rgb(255, 255, 255);
+    text-shadow: 1rem 1rem 1rem black ;  
+    text-align: center;
+}
+.FooterSocialMedias {
+    margin-top: 32rem;
+}
+
+.FooterSocialMediasImages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16rem;
+    margin-top: 16rem;
+}
+
+.FooterSocialMediasImages img{
+    padding: 0%;
+    width: 40rem;
+}
+
+@media (min-width: 480px) {
+    header img {
+        width: 240rem;
+    }
+}
+
+@keyframes TopDownOpacityAnimation {
+0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+}
+
+100% {
+    opacity: 1;
+    transform: translateY(0rem);
+}
+}

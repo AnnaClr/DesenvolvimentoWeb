@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+main {
+    background: linear-gradient(#001A49,#002E5F,#002C59,#044B75 );
+    text-align: center;
+
+    height: 580px;
+    width: 420px;
+
+    margin: auto;
+
+}
+
+h1 {
+    color: rgb(247, 248, 255);
+    
+}
+
+p {
+    color: rgb(223, 231, 255);
+}

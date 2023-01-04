@@ -1,0 +1,55 @@
+* {
+    margin:0 ;
+    padding: 0;
+    box-sizing: 
+    border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+
+    grid-template-areas:
+    "Header Header"
+    "Main Aside"
+    "Footer Footer"
+    ;
+
+    grid-template-columns: 
+    70% 30%;
+    grid-template-rows: 20% 60% 10% 10% ;
+
+    padding: 16px;
+    gap: 16px;
+
+    justify-content: center;
+    align-content: center;
+    
+}
+
+h1 {
+font-size: 48px;
+
+}
+
+header {
+background: rgb(255, 162, 219);
+grid-area: Header;
+}
+
+main {
+background: rgb(208, 158, 255);
+grid-area: Main;
+}
+
+aside {
+background: rgb(120, 193, 253);
+grid-area: Aside;
+
+}
+
+footer {
+background: rgb(255, 255, 122);
+grid-area: Footer;
+
+}

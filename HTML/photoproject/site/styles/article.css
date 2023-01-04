@@ -1,0 +1,26 @@
+@import url(style.css);
+
+
+main img {
+    padding: 0%;
+    margin-left: 40rem;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover ;
+    object-position: center;
+}
+
+.logo {
+    padding: 16rem;
+    margin-left: 0% ;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover ;
+    object-position: center;
+}
+
+@media (min-width: 440px) {
+    header img {
+        width: 240rem;
+    }
+}

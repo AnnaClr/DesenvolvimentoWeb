@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+.loading {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.label.loading {
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.circle-loading {
+    border: 16px solid rgb(104, 104, 104);
+    border-top-color: rgb(62, 62, 248);
+    width: 150px;
+    height: 150px;
+    
+    border-radius: 50%;
+    animation-name: rotateLoading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+@keyframes rotateLoading {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}

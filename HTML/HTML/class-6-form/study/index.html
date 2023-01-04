@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class - 06 - Forms</title>
+</head>
+<body>
+    <fieldset>
+        <legend> Dados Pessoais</legend>
+        <form action="" method="get">
+            <section>
+             <label for="name">Nome:</label>
+             <input type="text" id="name" placeholder="Escreva seu nome" autocomplete="name" autofocus>
+            </section>
+     
+            <br>
+             <section>
+                 <label for="birth">Nascismento:</label>
+                 <input type="date" name="Nascismento" id="birth">  
+             </section>
+             
+             <br>
+             <button type="submit">Enviar</button>
+         </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>Estudo Tipos de Input</legend>
+        <form action="">
+          <section> 
+            <label for="Frutas">Frutas</label>
+           <input type="text" name="Frutas" list="List-Fruits">
+           
+           
+           <br>
+           <button type="submit"> Enviar</button>
+        </form>
+        <br>
+        </fieldset>
+        <br>
+        <fieldset>
+       <section>
+    <datalist id="List-Fruits"> 
+        <option value="Pera"></option>
+        <option value="Maçã"></option>
+        <option value="Manga"></option>
+        <option value="Abacaxi"></option>
+       </datalist>
+      </section>
+            <form action="">
+             <section>
+              <label for="">Email:</label>
+              <input type="email">
+           </section>
+
+              <br>
+              <section>
+            <label for="">Senha:</label>
+            <input type="password" name="senha" minlength="8">
+        </section>
+             </section>
+             <br>
+             <section>
+                <label for="">CPF:</label>
+                <input type="text" pattern="[0-9]{11}"> 
+             </section>
+         <br>
+         
+
+            <button type="submit">Enviar</button>
+
+
+            </form>
+        </fieldset>
+   <br> 
+
+<section>
+        
+</section>
+
+</body>
+</html>
