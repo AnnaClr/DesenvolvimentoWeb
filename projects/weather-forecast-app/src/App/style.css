@@ -1,3 +1,17 @@
+/* .container {
+    height: 100vh;
+    overflow: auto;
+} */
+
+/* ::-webkit-scrollbar{
+    display: none;
+    background: rgba(14, 14, 14, 0.541);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0d519186;
+} */
+
 h1 {
     text-align: center;
     padding: 2.4rem;
@@ -13,6 +27,7 @@ form {
     padding: 0 3.2rem;
 }
 
+/* Leitura somente para navegadores */
 .srOnly {
     position: absolute;
     width: 0.1rem;

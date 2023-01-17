@@ -1,24 +1,54 @@
+import { useState, useEffect} from 'react'
 import { BsThermometerHigh } from 'react-icons/bs'
-import { GrSearch } from 'react-icons/gr'
+import { GoSearch } from 'react-icons/go'
 import './style.css'
 
 
 export function App() {
+  const [searchedCity, setSearchedCity] = useState('Jucas')
+  const [inputCity, setInputCity] = useState('')
+  const [weatherData, setWeatherData] = useState(null)
+  
+async function getCityWeather() {
+  const response = await fetch(API)
+  console.log(response)
+  if (response.status == 200) {
+    const data = await response.json()
+    setWeatherData(data)
+  } else if (response.status == 400){
+    alert('Cidade não encontrada!')
+  }
+}
+
+function searchCity(event) {
+  event.preventDefault()
+  setSearchedCity(inputCity)
+}
+
+  useEffect(() => {
+    getCityWeather()
+  }, [searchedCity])
+
+  const API = `https://api.weatherapi.com/v1/forecast.json?key=fb85b303e1fe4286a2b15407223112&q=${searchedCity}&days=4&lang=pt`
+
   return (
     <div className="container">
       <header>
       <h1>Previsão do Tempo</h1>
-      <form action="">
+      <form action="" onSubmit={searchCity}>
         <label htmlFor="citySearchInput" className='srOnly'>Pesquisar nome da cidade</label>
-        <input type="text" placeholder='Nome da cidade' id='citySearchInput'/>
-        <GrSearch className='searchIcon'/>
+        <input type="text" placeholder='Nome da cidade' id='citySearchInput' onChange={(event) => setInputCity(event.target.value)}/>
+        <GoSearch className='searchIcon'/>
         <button className='searchButton'>Buscar</button>
       </form>
+      <p>
+        {searchedCity}
+      </p>
       </header>
       <main>
         <article>
           <section className='blockCityName'>
-            <h2>Júcas, Ceará</h2>
+            <h2>{weatherData.location.name}</h2>
             <p>Brasil, 11/01/2023, 15:41:00</p>
           </section>
           <section className='blockCurrentTime'>
