@@ -1,17 +1,17 @@
 import { useState, useEffect} from 'react'
 import { BsThermometerHigh } from 'react-icons/bs'
 import { GoSearch } from 'react-icons/go'
+import { ClimateCard } from '../components/ClimateCard'
 import './style.css'
-
 
 export function App() {
   const [searchedCity, setSearchedCity] = useState('Jucas')
   const [inputCity, setInputCity] = useState('')
   const [weatherData, setWeatherData] = useState(null)
+  const [dateNow, setDateNow] = useState()
   
 async function getCityWeather() {
   const response = await fetch(API)
-  console.log(response)
   if (response.status == 200) {
     const data = await response.json()
     setWeatherData(data)
@@ -29,6 +29,16 @@ function searchCity(event) {
     getCityWeather()
   }, [searchedCity])
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDateNow(new Date().toLocaleString())
+    }, 1000)
+
+    return () => {
+      clearInterval(timer)
+    }
+  }, [])
+
   const API = `https://api.weatherapi.com/v1/forecast.json?key=fb85b303e1fe4286a2b15407223112&q=${searchedCity}&days=4&lang=pt`
 
   return (
@@ -41,45 +51,50 @@ function searchCity(event) {
         <GoSearch className='searchIcon'/>
         <button className='searchButton'>Buscar</button>
       </form>
-      <p>
+      {/* <p>
         {searchedCity}
-      </p>
+      </p> */}
       </header>
       <main>
-        <article>
-          <section className='blockCityName'>
-            <h2>{weatherData.location.name}</h2>
-            <p>Brasil, 11/01/2023, 15:41:00</p>
-          </section>
-          <section className='blockCurrentTime'>
-            <div className='currentTime'>
-            <div className='blockDegree'>
-              <BsThermometerHigh className='IconThermo'/>
-              <p className='degreeCurrent'>25.6°</p>
-              <p className='degreeMaxMin'>
-                <span className='degreeMax'>32.0°</span>
-                <span className='degreeMin'>20.0°</span>
-              </p>
-            </div>
-            </div>
-            <div className='blockSituation'>
-              <img src="#" alt="icon" />
-            <div>
-              <p>Parcialmente sol quente</p>
-              <p>Sensação térmica de 36.5°</p>
-            </div>
-            </div>
-          </section>
-          <section className='containerWeatherCondition'>
-            {/* Componente */}
-          </section>
-          <section className='containerWeatherForecast'>
-            <ol>
-              <li>Componente "Map"</li>
-            </ol>
-
-          </section>
-        </article>
+        {
+         searchedCity && weatherData && (
+            <article>
+            <section className='blockCityName'>
+              <h2>{weatherData.location.name}, {weatherData.location.region}</h2>
+              <p>{weatherData.location.country}, {dateNow}</p>
+            </section>
+            <section className='blockCurrentTime'>
+              <div className='currentTime'>
+              <div className='blockDegree'>
+                <BsThermometerHigh className='IconThermo'/>
+                <p className='degreeCurrent'>{weatherData.current.temp_c}</p>
+                <p className='degreeMaxMin'>
+                  <span className='degreeMax'>{weatherData.forecast.forecastday[0].day.maxtemp_c}</span>
+                  <span className='degreeMin'>{weatherData.forecast.forecastday[0].day.mintemp_c}</span>
+                </p>
+              </div>
+              </div>
+              <div className='blockSituation'>
+                <img src={weatherData.current.condition.icon} alt="icon" />
+              <div>
+                <p>{weatherData.current.condition.text}</p>
+                <p>Sensação térmica de {weatherData.current.feelslike_c}</p>
+              </div>
+              </div>
+            </section>
+            <section className='containerWeatherCondition'>
+              <ClimateCard climate='Vento' condition={`${weatherData.current.wind_kph}km/h`}/>
+              <ClimateCard climate='Umidade' condition={`${weatherData.current.wind_kph}%`}/>
+              <ClimateCard climate='Chuva' condition={`${weatherData.current.wind_kph}mm`}/>
+            </section>
+            <section className='containerWeatherForecast'>
+              <ol>
+                <li>Componente "Map"</li>
+              </ol>
+            </section>
+          </article>
+          )
+        }
       </main>
       <footer>
         <p>Web Development Course - Júcas</p>
