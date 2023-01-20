@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react'
 import { BsThermometerHigh } from 'react-icons/bs'
 import { GoSearch } from 'react-icons/go'
 import { ClimateCard } from '../components/ClimateCard'
+import { ForecastCard } from '../components/ForecastCard'
 import './style.css'
 
 export function App() {
@@ -51,9 +52,6 @@ function searchCity(event) {
         <GoSearch className='searchIcon'/>
         <button className='searchButton'>Buscar</button>
       </form>
-      {/* <p>
-        {searchedCity}
-      </p> */}
       </header>
       <main>
         {
@@ -89,7 +87,23 @@ function searchCity(event) {
             </section>
             <section className='containerWeatherForecast'>
               <ol>
-                <li>Componente "Map"</li>
+                {
+                  weatherData.forecast.forecastday.map((forecastDay, index) => {
+                    return (
+                      <li key={index}>
+                        <ForecastCard 
+                        day={
+                          index == 0 ? 'Hoje' :
+                          Intl.DateTimeFormat('pt-BR',{weekday: 'short'}).format(new Date(forecastDay.date.split('-').join('/')))
+                        }
+                        icon={forecastDay.day.condition.icon}
+                        tempMax={forecastDay.day.maxtemp_c} 
+                        tempMin={forecastDay.day.mintemp_c}/>
+                      </li>
+                    )
+                  })
+                }
+                
               </ol>
             </section>
           </article>
