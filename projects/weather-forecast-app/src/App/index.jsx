@@ -81,9 +81,9 @@ function searchCity(event) {
               </div>
             </section>
             <section className='containerWeatherCondition'>
-              <ClimateCard climate='Vento' condition={`${weatherData.current.wind_kph}km/h`}/>
-              <ClimateCard climate='Umidade' condition={`${weatherData.current.wind_kph}%`}/>
-              <ClimateCard climate='Chuva' condition={`${weatherData.current.wind_kph}mm`}/>
+                <ClimateCard climate='Vento' condition={`${weatherData.current.wind_kph}km/h`}/>
+                <ClimateCard climate='Umidade' condition={`${weatherData.current.humidity}%`}/>
+                <ClimateCard climate='Chuva' condition={`${weatherData.current.precip_mm}mm`}/>
             </section>
             <section className='containerWeatherForecast'>
               <ol>
