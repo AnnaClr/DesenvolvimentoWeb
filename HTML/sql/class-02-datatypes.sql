@@ -10,7 +10,7 @@ CREATE TABLE estudantes(
     subscription TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-DESCRIBE studants;
+DESCRIBE estudantes;
 
 INSERT INTO estudantes (name, cpf, birth_year, gender, c_performance)
 VALUES ("João", "12345678900", "1989-12-25", "M", 89.2);
@@ -49,6 +49,7 @@ INSERT INTO courses VALUES
 (DEFAULT, 'Informática para o Mundo do Trabalho', 160);
 
 SELECT * FROM courses;
+SELECT * FROM estudantes;
 
 ALTER TABLE studants 
 ADD COLUMN course TINYINT UNSIGNED
@@ -68,6 +69,18 @@ UPDATE studants SET id_course = 2 WHERE id = 3;
 
 SELECT * FROM courses;
 
+
+
 SELECT studants.name, studants.id_course, courses.name
 FROM studants INNER JOIN courses
 ON studants.id_course = courses.id;
+
+ALTER TABLE estudantes ADD course TINYINT UNSIGNED;
+ALTER TABLE estudantes ADD FOREIGN KEY(course) REFERENCES courses(id);
+
+UPDATE estudantes SET course = 3 WHERE id = 1;
+SELECT * FROM estudantes;
+
+SELECT estudantes.id, estudantes.name, courses.name FROM estudantes JOIN courses ON estudantes.course = courses.id;
+
+USE school;
