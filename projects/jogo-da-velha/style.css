@@ -1,0 +1,30 @@
+:root {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding:0 ;
+    box-sizing: border-box;
+}
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 18.75rem;
+    height: 18.75rem;
+    border: 5px solid rgb(27, 52, 163);
+    border-radius: 1rem;
+}
+
+
+
+.board div {
+    width: 5.9rem;
+    height: 5.9rem;
+    text-align: center;
+    line-height: 6.25rem;
+    font-size: 3rem;
+    font-weight: bold;
+    border: 1px solid rgb(27, 52, 163);
+    color: #000000;
+}
