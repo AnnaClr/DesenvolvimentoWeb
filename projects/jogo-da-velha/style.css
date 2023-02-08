@@ -7,6 +7,10 @@
     padding:0 ;
     box-sizing: border-box;
 }
+
+h1 {
+    text-align: center;
+}
 .board {
     display: flex;
     flex-wrap: wrap;
@@ -15,8 +19,6 @@
     border: 5px solid rgb(27, 52, 163);
     border-radius: 1rem;
 }
-
-
 
 .board div {
     width: 5.9rem;
