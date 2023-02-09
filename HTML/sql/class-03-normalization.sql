@@ -43,3 +43,25 @@ INSERT INTO Estudantes (
 
 SELECT Estudantes.Nome, Cursos.Nome FROM Estudantes
 INNER JOIN Cursos ON Estudantes.Curso = Cursos.ID;
+
+DROP TABLE Phones;
+CREATE TABLE Phones (
+ID SMALLINT UNSIGNED AUTO_INCREMENT NOT NULL,
+Número VARCHAR(255) NOT NULL,
+Estudante SMALLINT UNSIGNED NOT NULL,
+
+PRIMARY KEY(ID),
+FOREIGN KEY(Estudante) REFERENCES Estudantes(ID)
+);
+
+DESCRIBE Phones;
+
+INSERT INTO Phones(Número, Estudante) VALUES
+('(88) 8888-8888', 1),
+('(88) 9999-9999', 1),
+('(88) 0000-0000', 2),
+('(88) 1111-1111', 3);
+
+SELECT * FROM Phones;
+
+SELECT Estudantes.Nome, Phones.Número FROM Phones INNER JOIN Estudantes ON Estudantes.ID = Phones.Estudante;
