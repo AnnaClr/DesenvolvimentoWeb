@@ -1,48 +1,59 @@
-USE school;
-DROP TABLE Cursos;
-CREATE TABLE Cursos (
-   ID TINYINT UNSIGNED AUTO_INCREMENT NOT NULL,
-   Nome VARCHAR(255) NOT NULL,
-   Horas TINYINT UNSIGNED NOT NULL,
-   
-   PRIMARY KEY(ID)
+DROP  TABLE alunos;
+CREATE  TABLE  alunos (
+	id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR ( 40 ) NOT NULL ,
+    cpf VARCHAR ( 11 ) ÚNICO NÃO NULO ,
+    ano_nascimento DATE  NOT NULL ,
+    gênero ENUM( ' M ' , ' F ' ) NÃO NULO ,
+    cidade VARCHAR ( 30 ) PADRÃO " Jucás " ,
+    c_desempenho DECIMAL ( 5 , 2 ),
+    assinatura TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO Cursos (Nome, Horas) VALUES 
-('Programador Web', 240),
-('Informatica para o mundo do trabalho', 160),
-('Ferramentas Digitais', 60);
+DESCREVA alunos;
 
-SELECT * FROM Cursos;
+INSERT INTO alunos (nome, cpf, ano_nascimento, sexo, desempenho_c)
+VALORES ( " João " , " 12345678900 " , " 1989-12-25 " , " M " , 89 . 2 );
 
-DROP TABLE Estudantes;
-CREATE TABLE Estudantes(
-   ID SMALLINT UNSIGNED AUTO_INCREMENT NOT NULL,
-   Nome VARCHAR(255) NOT NULL,
-   Rua VARCHAR(255) NOT NULL,
-   Bairro VARCHAR(255) NOT NULL,
-   Cidade VARCHAR(255) NOT NULL,
-   Curso TINYINT UNSIGNED NOT NULL,
-   PRIMARY KEY(ID),
-   FOREIGN KEY(Curso) REFERENCES Cursos(ID)
+INSERIR NOS VALORES DOS ALUNOS 
+(PADRÃO, " Pedro " , " 12345678901 " , " 1998-02-12 " , " M " , PADRÃO, 90,75 , PADRÃO ) ,
+(DEFAULT, " Maria " , " 12345678902 " , " 1995-06-23 " , " F " , DEFAULT, 95 , DEFAULT);
+
+SELECIONE  *  DE alunos;
+SELECIONE 
+	ID AS ID,
+    nome AS Nome,
+    c_desempenho AS CR,
+    curso AS Curso
+DE alunos
+PEDIDO POR CR
+ LIMITE  DESC 10 ;
+
+SELECIONE 
+	nome AS Nome,
+    ano_nascimento AS Nascimanto,
+    CURDATE() Hoje,
+    FLOOR(DATEDIFF( CURRENT_DATE (), birth_year) /  365 . 25 ) Idade
+DE alunos;
+
+ Cursos de DROP TABLE ;
+CREATE  TABLE  cursos (
+	id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    nome varchar ( 40 ) NÃO NULO ,
+    horas TINYINT UNSIGNED
 );
 
-DESCRIBE Cursos;
+DESCREVA os cursos;
 
-INSERT INTO Estudantes (
-   Nome,
-   Rua,
-   Bairro,
-   Cidade,
-   Curso
-) VALUES 
-('Emanuel', 'Rua A', 'Bairro B', 'Cidade C', 1),
-('Mario', 'Rua A', 'Bairro B', 'Cidade C', 1),
-('Samila', 'Rua A', 'Bairro B', 'Cidade C', 2)
-;
+INSERIR NOS VALORES dos cursos
+(DEFAULT, ' Programador Web ' , 240 ),
+(PADRÃO, ' Ferramentas Digitais ' , 160 ),
+(DEFAULT, ' Informática para o Mundo do Trabalho ' , 160 );
 
-SELECT Estudantes.Nome, Cursos.Nome FROM Estudantes
-INNER JOIN Cursos ON Estudantes.Curso = Cursos.ID;
+SELECIONE  *  DE cursos;
+
+
+
 
 
 
