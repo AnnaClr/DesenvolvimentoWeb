@@ -1,0 +1,10 @@
+const express = require('express')
+const app = express()
+
+app.listen(3000, console.log('Server is running on Port 3000'))
+
+const routes = require('./routes')
+app.use(routes)
+
+const prisma = require('./databases')
+prisma.$connect().then(() => console.log("Database is connected...")).catch(() => console.error(error))
