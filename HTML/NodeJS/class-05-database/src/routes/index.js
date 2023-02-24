@@ -1,9 +1,9 @@
 const { Router } = require('express')
 const router = Router()
 const controllers = require('../controllers')
-router.get('/', controllers.read)
-router.post('/', controllers.create)
-router.put('/', controllers.update)
-router.delete('/', controllers.delete)
+router.get('/courses', controllers.read)
+router.post('/courses', controllers.create)
+router.put('/courses/:ID', controllers.update)
+router.delete('/courses/:ID', controllers.delete)
 
 module.exports = router
