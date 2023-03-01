@@ -1,5 +1,5 @@
 const prisma = require('../databases')
-
+const bcrypt = require('bcrypt')
 
 module.exports = {
    async read(req, res) {
@@ -29,7 +29,9 @@ module.exports = {
             return res.status(400).json('Email already used')
         }
 
-       
+        const passwordHash = await bcrypt.hash(Password, 10)
+
+        const userCreate = await prisma.users.create({data: {Email, Password: passwordHash}})
         return res.status(201).json(userCreate)
 
     } catch(error) {
