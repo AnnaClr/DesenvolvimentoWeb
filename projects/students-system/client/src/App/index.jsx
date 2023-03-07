@@ -1,9 +1,20 @@
-import { Home } from "../pages/Home"
+import { Outlet } from 'react-router-dom'
+import { Menu } from '../components/Menu/index.jsx'
 import { Container } from './style.js'
 function App() {
   return (
     <Container>
-      <Home/>
+       <header>
+         <Menu/>
+       </header>
+
+       <main>
+         <Outlet/>
+       </main>
+
+       <footer>
+        <p>Web Developer Course</p>
+       </footer>
     </Container>
   )
 }
