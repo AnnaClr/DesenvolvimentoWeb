@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom'
-import { Menu } from '../components/Menu/index.jsx'
+import { Header } from '../components/Header/index.jsx'
 import { Container } from './style.js'
 function App() {
   return (
     <Container>
        <header>
-         <Menu/>
+         <Header/>
        </header>
 
        <main>
