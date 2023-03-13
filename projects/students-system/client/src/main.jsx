@@ -8,10 +8,10 @@ import { routes } from './routes'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+ // <React.StrictMode>
     <ThemeProvider theme={theme}>
      <RouterProvider router={routes}/>
      <ResetStyled/>
     </ThemeProvider>
-  </React.StrictMode>,
+  // </React.StrictMode>,
 )
