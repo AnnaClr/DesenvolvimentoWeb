@@ -1,12 +1,13 @@
 import { Container } from "./style"
 import { useForm } from "react-hook-form"
-import InputMask from "react-input-mask"
+import InputMask from 'react-input-mask';
+
 export function FormRegister() {
-    const { register, handleSubmit, formState: {errors}, reset} = useForm()
+    const { register, handleSubmit, formState: {errors}, reset} = useForm();
     function onSubmit(data) {
-        alert("Aluno cadastrado com sucesso!")
-        reset()
         console.log(data);
+        // alert("Aluno cadastrado com sucesso!")
+        reset();
     }
     // console.log(errors);
     return (
@@ -26,7 +27,14 @@ export function FormRegister() {
 
                 <section>
                     <label htmlFor="phone">Celular</label>
-                    <InputMask mask={"(99) 9999-9999"} maskChar="" type="tel" id="phone" {...register("phone", {required: true})} placeholder="Número do aluno"/>
+                    <InputMask 
+                        mask="(99) 99999-9999" 
+                        maskChar=""
+                        type="tel" 
+                        id="phone" 
+                        {...register("phone", {required: true})} 
+                        placeholder="Número do aluno"
+                    />
                     {errors.phone && <span className="error">Campo obrigatório!</span>}
                 </section>
 
