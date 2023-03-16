@@ -4,10 +4,29 @@ import { useEffect, useState } from "react"
 import Table from 'react-bootstrap/Table'
 import { BsSearch } from "react-icons/bs"
 import { BiEdit } from "react-icons/bi"
-
+import Modal from 'react-bootstrap/Modal';
+import { FormUpdate } from "../FormUpdate"
 
 export function HandleStudents() {
     const [listStudents, setListStudents] = useState([])
+    const [showModal, setShowModal] = useState(false)
+    const [studentData, setStudentData] = useState([])
+
+    const modalOpen = (studentID) => {
+        setShowModal(true)
+        const student = listStudents.findIndex(student => student.ID == studentID)
+        setStudentData(listStudents[student]);
+    }
+    console.log(studentData);
+    const modalClose = () => setShowModal(false)
+
+    // function modalOpen() {
+    //     setShowModal(true)
+    // }
+    // function modalClose() {
+    //     setShowModal(false)
+    // }
+
     const API = "http://localhost:3000/students"
     function fetchStudents() {
         axios.get(API)
@@ -62,7 +81,7 @@ export function HandleStudents() {
                                     <td>{students.Celular}</td>
                                     <td>{students.Cidade}</td>
                                     <td>
-                                        <BiEdit className="editIcon"/>
+                                        <BiEdit className="editIcon" onClick={() => modalOpen(students.ID)}/>
                                     </td>
                                 </tr>
                             )
@@ -70,6 +89,18 @@ export function HandleStudents() {
 
                     </tbody>
                 </Table>
+                </section>
+
+                <section>
+                <Modal show={showModal} onHide={modalClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Aluno</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <FormUpdate modalClose={modalClose} studentData={studentData}/>
+                    </Modal.Body>
+                    
+                </Modal>
                 </section>
             </article>
         </Container>
