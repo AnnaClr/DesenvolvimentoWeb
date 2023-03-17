@@ -20,7 +20,7 @@ export function HandleStudents() {
             student.Cidade.toLowerCase().includes(searchStudent.toLowerCase())
         )
     })
-    console.log(searchStudent);
+    // console.log(searchStudent);
 
     const modalOpen = (studentID) => {
         setShowModal(true)

@@ -81,7 +81,7 @@ export function FormUpdate({ modalClose, studentData, fetchStudents }) {
                   placeholder="Nome do aluno" 
                   required 
                   name='Nome' 
-                  value={studentData.Nome}
+                  value={studentDataForm.Nome}
                   onChange={handleInputsChange}
                 />
                     <Form.Control.Feedback type="invalid">Campo obrigatório!</Form.Control.Feedback>
@@ -96,7 +96,7 @@ export function FormUpdate({ modalClose, studentData, fetchStudents }) {
                   placeholder="Digite seu email" 
                   required 
                   name='Email' 
-                  value={studentData.Email}
+                  value={studentDataForm.Email}
                   onChange={handleInputsChange}
                 />
                     <Form.Control.Feedback type="invalid">Campo obrigatório!</Form.Control.Feedback>
@@ -111,7 +111,7 @@ export function FormUpdate({ modalClose, studentData, fetchStudents }) {
                 placeholder="Informe sua cidade" 
                 required 
                 name='Cidade' 
-                value={studentData.Cidade}
+                value={studentDataForm.Cidade}
                 onChange={handleInputsChange}
                 />
                 <Form.Control.Feedback type="invalid">Campo obrigatório!</Form.Control.Feedback>
@@ -124,7 +124,7 @@ export function FormUpdate({ modalClose, studentData, fetchStudents }) {
                 placeholder="(99) 9999-9999" 
                 required 
                 name='Celular' 
-                value={studentData.Celular}
+                value={studentDataForm.Celular}
                 onChange={handleInputsChange}
                 />
                 <Form.Control.Feedback type="invalid">Campo obrigatório!</Form.Control.Feedback>
