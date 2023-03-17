@@ -11,13 +11,23 @@ export function HandleStudents() {
     const [listStudents, setListStudents] = useState([])
     const [showModal, setShowModal] = useState(false)
     const [studentData, setStudentData] = useState([])
+    const [searchStudent, setSearchStudent] = useState("")
+
+    const filterStudents = listStudents.filter((student) => {
+        return(
+            student.Nome.toLowerCase().includes(searchStudent.toLowerCase()) ||
+            String(student.ID).toLowerCase().includes(searchStudent.toLowerCase()) ||
+            student.Cidade.toLowerCase().includes(searchStudent.toLowerCase())
+        )
+    })
+    console.log(searchStudent);
 
     const modalOpen = (studentID) => {
         setShowModal(true)
         const student = listStudents.findIndex(student => student.ID == studentID)
         setStudentData(listStudents[student]);
     }
-    console.log(studentData);
+    // console.log(studentData);
     const modalClose = () => setShowModal(false)
 
     // function modalOpen() {
@@ -38,7 +48,7 @@ export function HandleStudents() {
         fetchStudents()
     }, [])
 
-    console.log(listStudents);
+    // console.log(listStudents);
     return (
         <Container>
             <article>
@@ -49,6 +59,8 @@ export function HandleStudents() {
                     id="inputSearchStudent"
                     type="text"
                     placeholder=" "
+                    value={searchStudent}
+                    onChange={(event) => setSearchStudent(event.target.value)}
                     />
 
                     <label 
@@ -73,7 +85,7 @@ export function HandleStudents() {
                     </thead>
                     <tbody>
                         {listStudents && 
-                            listStudents.map((students, index) => {
+                            filterStudents.map((students, index) => {
                             return (
                                 <tr key={index}>
                                     <td>{students.ID}</td>
@@ -97,7 +109,7 @@ export function HandleStudents() {
                         <Modal.Title>Aluno</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <FormUpdate modalClose={modalClose} studentData={studentData}/>
+                        <FormUpdate modalClose={modalClose} studentData={studentData} fetchStudents={fetchStudents}/>
                     </Modal.Body>
                     
                 </Modal>

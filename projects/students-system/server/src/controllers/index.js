@@ -48,7 +48,7 @@ module.exports = {
             if (!student) return res.status(400).json("Aluno não encontrado.")
            
             const studentEmail = await prisma.students.findUnique({where: {Email}})
-            if (studentEmail) return res.json("O email já esta em uso!")
+            if (studentEmail && (studentEmail.Email != student.Email)) return res.json("O email já esta em uso!")
 
             await prisma.students.update({data: { Nome, Email, Celular, Cidade }, where: {ID: Number(ID)}})
             return res.json("Aluno atualizado com sucesso!")
