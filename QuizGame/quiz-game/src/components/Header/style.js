@@ -10,8 +10,6 @@ export const Container = styled.div`
    padding: 2.4rem;
    background: #202020;
    color: white;
-   
-
  
    button {
     background: none;

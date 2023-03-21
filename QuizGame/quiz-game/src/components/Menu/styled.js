@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const Container = styled.div `
-   background: #000C;
+   background: #202020;
    width: 100%;
    padding: 2.4rem;
    
@@ -9,14 +9,14 @@ export const Container = styled.div `
    display: grid;
    place-content: center;
 
-
    ul {
     list-style: none;
     font-size: 1.6rem;
     text-align: center;
 
     display: grid;
-    gap: 4.8rem;
+    gap: 3.2rem;
+    
     
    };
 
@@ -36,6 +36,6 @@ export const Container = styled.div `
    };
 
    .select {
-      color: orange;
+      color: #fAFFA5;
    };
 `

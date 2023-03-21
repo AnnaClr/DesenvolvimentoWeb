@@ -1,6 +1,6 @@
 import { Container } from "./styled";
 
-export function QuizQuestions() {
+export function QuizQuestion() {
     return (
         <Container>
             <h1>Perguntas</h1>
