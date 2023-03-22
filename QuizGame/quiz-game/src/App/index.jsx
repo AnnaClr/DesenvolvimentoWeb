@@ -21,9 +21,8 @@ export function App() {
         <p>Web Developer Course</p>
        </footer>
       {quizState.gameStage === "Start" && <Home/>}
-      {quizState.gameStage === "Playing" && <QuizQuestion/>}
+      {quizState.gameStage === "Playin" && <QuizQuestion/>}
       {quizState.gameStage === "Gameover" && <FinalPage/>}
     </Container>
   )
 }
-
