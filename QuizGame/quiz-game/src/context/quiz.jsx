@@ -1,13 +1,14 @@
 import { createContext, useReducer } from "react";
+//import { QuizQuestions } from "../quiz/quizQuest"
 import { QuizQuestions } from "../quiz/quizQuest"
 export const QuizContext = createContext();
 export const QuizProvider = ({children}) => {
-    const value = useReducer(quizReducer, firstState)
+    const value = useReducer(quizReducer, initialState)
     return  <QuizContext.Provider value={value}>{children}</QuizContext.Provider>
 }
 
 const Stages = ["Start", "Playing", "Gameover"];
-const firstState = {
+const initialState = {
     gameStage: Stages[0],
     QuizQuestions,
     currentQuestion: 0,

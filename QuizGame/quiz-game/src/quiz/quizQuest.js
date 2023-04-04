@@ -85,3 +85,99 @@ export const QuizQuestions = [
     
     ]
 }]
+
+
+// export function questions() {
+//        const question = [
+//             options = [
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' }
+//             ],
+//          ],
+
+//          question() = {
+//             options: [
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' }
+//             ],
+//          },
+         
+//          question() = {
+//             options: [
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' }
+//             ],
+//          },
+         
+//          question() = {
+//             options: [
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' }
+//             ],
+//          },
+         
+//          question() = {
+//             options: [
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' }
+//             ],
+//          },
+         
+//          question() = {
+//             options: [
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' }
+//             ],
+//          },
+         
+//          question() = {
+//             options: [
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' }
+//             ],
+//          },
+         
+//          question() = {
+//             options: [
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' }
+//             ],
+//          },
+         
+//          question() = {
+//             options: [
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' }
+//             ],
+//          },
+         
+//          question() = {
+//             options: [
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' },
+//                { alternative: "", isCorrect: '' }
+//             ],
+//          },
+         
+// }
+
+// 
