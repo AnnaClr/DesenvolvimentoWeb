@@ -20,6 +20,7 @@ export function App() {
        <footer>
         <p>Web Developer Course</p>
        </footer>
+       
       {quizState.gameStage === "Start" && <Home/>}
       {quizState.gameStage === "Playing" && <QuizQuestion/>}
       {quizState.gameStage === "Gameover" && <FinalPage/>}
