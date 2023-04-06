@@ -5,16 +5,16 @@ import { theme } from './styles/theme'
 import { ResetStyled } from "./styles/reset"
 import { routes } from './routes'
 import { RouterProvider } from "react-router-dom"
-import { QuizProvider } from './context/quiz'
+//import { QuizProvider } from './context/quiz'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
       <ThemeProvider theme={theme}>
-        <QuizProvider>
+        {/* <QuizProvider> */}
           <RouterProvider router={routes}/>
           <ResetStyled/>
-        </QuizProvider>
+        {/* </QuizProvider> */}
     </ThemeProvider>
   // </React.StrictMode>,
  

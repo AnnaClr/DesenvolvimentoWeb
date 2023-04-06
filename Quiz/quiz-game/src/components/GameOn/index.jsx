@@ -1,7 +1,7 @@
 import { Container } from "./styled";
 // import React, { useState } from "react";
 import React, { useContext, useState } from "react";
-import { QuizContext } from "../../context/quiz";
+// import { QuizContext } from "../../context/quiz";
 // import { useContext } from "react";
 
 

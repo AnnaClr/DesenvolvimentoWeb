@@ -11,6 +11,7 @@ export const Container = styled.div `
     text-align: center;
    };
 
+
    .startButton {
     width: 50%;
     height: 7vh;
@@ -21,11 +22,11 @@ export const Container = styled.div `
     text-align: center;
     background: #6B6B6B;
     color: white;
-    border-radius: .4rem;
-    padding: .4rem;
+    border-radius: .6rem;
+    padding: .8rem;
     font-size: 2.4rem;
     cursor: pointer;
-
    }
+
    
 `
