@@ -1,7 +1,11 @@
 import { createContext, useReducer } from "react";
-//import { QuizQuestions } from "../quiz/quizQuest"
 import { QuizQuestions } from "../quiz/quizQuest"
 export const QuizContext = createContext();
+
+export const QuizProvider = ({children}) => {
+    const value = useReducer(quizReducer, initialState)
+    return  <QuizContext.Provider value={value}>{children}</QuizContext.Provider>
+}
 
 
 const Stages = ["Start", "Playing", "Gameover"];
@@ -32,23 +36,18 @@ const quizReducer = (state, action) => {
         case "checkAnswer":
             if (state.answerSelect) return state
             const alternative = action.payload.alternative
-            const option = action.payload.option
+            const options = action.payload.options
             let correctAnswer = 0
-                if (alternative === option)
+                if (alternative === true)
                 correctAnswer = 1
                 return {
                     ...state,
                     score: state.score + correctAnswer,
-                    answerSelect: option
+                    answerSelect: options
                 }
             default:
             return state
     };
-}
-
-export const QuizProvider = ({children}) => {
-    const value = useReducer(quizReducer, initialState)
-    return  <QuizContext.Provider value={value}>{children}</QuizContext.Provider>
 }
 
 

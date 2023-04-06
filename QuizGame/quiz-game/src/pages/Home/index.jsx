@@ -7,7 +7,9 @@ export function Home() {
     return (
         <Container>
             <h1>Quiz de Programação</h1>
-            <button className="startButton" onClick={(changeStage) => dispatch({type: "changeStage"})}>Iniciar</button>
+            <button className="startButton" onClick={(changeStage) => dispatch({ type: "changeStage" })}>Iniciar</button>
         </Container>
     )
+
+    
 }

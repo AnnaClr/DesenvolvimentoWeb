@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 // export const QuizQuestions = [ 
 //   {
 //     questions:  [
@@ -88,122 +88,8 @@ import { useState } from 'react'
 // }]
 
 
-// export function QuizQuestions() {
-//       const questions = [
-//       {
-//          questions: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//          options: [
-//           { alternative: "name", isCorrect: false },
-//           { alternative: "title", isCorrect: true },
-//           { alternative: "class", isCorrect: false },
-//           { alternative: "classname", isCorrect: false }
-//     ],
-//  },
 
-//       {
-//          questions: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//             options: [
-//             { alternative: "name", isCorrect: false },
-//             { alternative: "title", isCorrect: true },
-//             { alternative: "class", isCorrect: false },
-//             { alternative: "classname", isCorrect: false }
-//       ],
-//       },
-
-//       {
-//          questions: 'Se há 16px em 1rem, quantos pixels há em 143.75rem?',
-//          options: [
-//             { alternative: "2.130", isCorrect: false },
-//             { alternative: "2.200", isCorrect: false },
-//             { alternative: "2.300", isCorrect: true },
-//             { alternative: "2.416", isCorrect: false }
-//       ],
-//       },
-
-//       {
-//          questions: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//          options: [
-//             { alternative: "name", isCorrect: false },
-//             { alternative: "title", isCorrect: true },
-//             { alternative: "class", isCorrect: false },
-//             { alternative: "classname", isCorrect: false }
-//       ],
-//       },
-
-//       {
-//          questions: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//          options: [
-//             { alternative: "name", isCorrect: false },
-//             { alternative: "title", isCorrect: true },
-//             { alternative: "class", isCorrect: false },
-//             { alternative: "classname", isCorrect: false }
-//       ],
-//       },
-
-//       {
-//          questions: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//          options: [
-//             { alternative: "name", isCorrect: false },
-//             { alternative: "title", isCorrect: true },
-//             { alternative: "class", isCorrect: false },
-//             { alternative: "classname", isCorrect: false }
-//       ],
-//       },
-
-//       {
-//          questions: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//          options: [
-//             { alternative: "name", isCorrect: false },
-//             { alternative: "title", isCorrect: true },
-//             { alternative: "class", isCorrect: false },
-//             { alternative: "classname", isCorrect: false }
-//       ],
-//       },
-
-//       {
-//          questions: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//          options: [
-//             { alternative: "name", isCorrect: false },
-//             { alternative: "title", isCorrect: true },
-//             { alternative: "class", isCorrect: false },
-//             { alternative: "classname", isCorrect: false }
-//       ],
-//       },
-
-//       {
-//          questions: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//          options: [
-//             { alternative: "name", isCorrect: false },
-//             { alternative: "title", isCorrect: true },
-//             { alternative: "class", isCorrect: false },
-//             { alternative: "classname", isCorrect: false }
-//       ],
-//       },
-
-//       {
-//          questions: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//          options: [
-//             { alternative: "name", isCorrect: false },
-//             { alternative: "title", isCorrect: true },
-//             { alternative: "class", isCorrect: false },
-//             { alternative: "classname", isCorrect: false }
-//       ],
-//       },
-
-//       {
-//          questions: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//          options: [
-//             { alternative: "name", isCorrect: false },
-//             { alternative: "title", isCorrect: true },
-//             { alternative: "class", isCorrect: false },
-//             { alternative: "classname", isCorrect: false }
-//       ],
-//       }
-//         ]
-      
-// }
-
-export function QuizQuestions() {
+export function QuizQuestions({question, options}) {
       const questions = [
       {
          question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
