@@ -1,209 +1,98 @@
 import { Container } from "./styled";;
 import React, {useState } from "react";
 
-// export default function QuizGame() {
-//   const [currentQuestion, setCurrentQuestion] = useState(0);
-//   const [score, setScore] = useState(0);
-
-//   const questions = [
-//     {
-//        question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//           options: [
-//           { alternative: "name", isCorrect: false },
-//           { alternative: "title", isCorrect: true },
-//           { alternative: "class", isCorrect: false },
-//           { alternative: "classname", isCorrect: false }
-//     ],
-// },
-
-//     {
-//        question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//           options: [
-//           { alternative: "name", isCorrect: false },
-//           { alternative: "title", isCorrect: true },
-//           { alternative: "class", isCorrect: false },
-//           { alternative: "classname", isCorrect: false }
-//     ],
-//     },
-
-//     {
-//        question: 'Se há 16px em 1rem, quantos pixels há em 143.75rem?',
-//           options: [
-//              { alternative: "2.130", isCorrect: false },
-//              { alternative: "2.200", isCorrect: false },
-//              { alternative: "2.300", isCorrect: true },
-//              { alternative: "2.416", isCorrect: false }
-//        ],
-//     },
-
-//     {
-//        question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//           options: [
-//              { alternative: "name", isCorrect: false },
-//              { alternative: "title", isCorrect: true },
-//              { alternative: "class", isCorrect: false },
-//              { alternative: "classname", isCorrect: false }
-//        ],
-//     },
-
-//     {
-//        question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//           options: [
-//              { alternative: "name", isCorrect: false },
-//              { alternative: "title", isCorrect: true },
-//              { alternative: "class", isCorrect: false },
-//              { alternative: "classname", isCorrect: false }
-//        ],
-//     },
-
-//     {
-//        question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//           options: [
-//              { alternative: "name", isCorrect: false },
-//              { alternative: "title", isCorrect: true },
-//              { alternative: "class", isCorrect: false },
-//              { alternative: "classname", isCorrect: false }
-//        ],
-//     },
-
-//     {
-//        question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//           options: [
-//              { alternative: "name", isCorrect: false },
-//              { alternative: "title", isCorrect: true },
-//              { alternative: "class", isCorrect: false },
-//              { alternative: "classname", isCorrect: false }
-//        ],
-//     },
-
-//     {
-//        question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//           options: [
-//              { alternative: "name", isCorrect: false },
-//              { alternative: "title", isCorrect: true },
-//              { alternative: "class", isCorrect: false },
-//              { alternative: "classname", isCorrect: false }
-//        ],
-//     },
-
-//     {
-//        question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//           options: [
-//              { alternative: "name", isCorrect: false },
-//              { alternative: "title", isCorrect: true },
-//              { alternative: "class", isCorrect: false },
-//              { alternative: "classname", isCorrect: false }
-//        ],
-//     },
-
-//     {
-//        question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//           options: [
-//              { alternative: "name", isCorrect: false },
-//              { alternative: "title", isCorrect: true },
-//              { alternative: "class", isCorrect: false },
-//              { alternative: "classname", isCorrect: false }
-//        ],
-//     },
-
-//     {
-//        question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
-//           options: [
-//              { alternative: "name", isCorrect: false },
-//              { alternative: "title", isCorrect: true },
-//              { alternative: "class", isCorrect: false },
-//              { alternative: "classname", isCorrect: false }
-//        ],
-//     }
-//       ]
-
-//       const handleAnswerClick = (alternative) => {
-//         if (alternative === true) {
-//           setScore(score + 1);
-//         }
-    
-//         const nextQuestion = currentQuestion + 1;
-//         if (nextQuestion < questions.length) {
-//           setCurrentQuestion(nextQuestion);
-//         } else {
-//           alert(`Sua pontuação final é ${score} de ${questions.length}`);
-//         }
-//       }
-
-//       <Container>
-//          <h2>{`Questão ${questions.length}: ${currentQuestion.question}`}</h2>
-//             <div>
-//                <button></button>
-//                <button></button>
-//                <button></button>
-//                <button></button>
-//             </div>
-           
-//       </Container>
-
-// }
-
-// export function Options({ options, selectOption, alternative }) {
-//    // const [quizState, dispatch] = useContext(QuizContext);
-//    const answerSelected = alternative
-//    return (
-//      <Container>
-//       <button onClick={(alternative) => selectOption()}
-//        className={`
-//        option
-//          ${QuizGame.answerSelected && alternative === true ? "correct" : ""} 
-//          ${QuizGame.answerSelected && alternative === false ? "wrong" : ""}
-//          `}></button>
-//        <p>{options}</p>
-//      </Container>
-//    );
-//  };
-
-
-// // export default function QuizGame() {
-// //     return (
-// //         <Container>
-// //             <h2>Questão</h2>
-// //         </Container>
-// //        // document.write(currentQuestion.question)
-// //       )
-
-// // }
-
 export default function QuizGame() {
-   const [currentQuestion, setCurrentQuestion] = useState(0);
-   const [score, setScore] = useState(0);
-   const count = 0
-   // const score = count
-   const answer = true
-   console.log(score);
+  const [showResults, setShowResults] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [score, setScore] = useState(0);
+  console.log(score);
+
+  const questions = [
+       {
+          question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
+             options: [
+             {id: 0, alternative: "name", isCorrect: false },
+             {id: 1, alternative: "title", isCorrect: true },
+             {id: 2, alternative: "class", isCorrect: false },
+             {id: 3, alternative: "classname", isCorrect: false }
+       ],
+   },
+   
+       {
+          question: 'Qual a tag é usada para linkar JavaScript ao HTML?',
+             options: [
+             {id: 0, alternative: "javascript", isCorrect: false },
+             {id: 1, alternative: "js", isCorrect: false },
+             {id: 2, alternative: "script", isCorrect: true },
+             {id: 3, alternative: "java", isCorrect: false }
+       ],
+       },
+   
+       {
+          question: 'Se há 16px em 1rem, quantos pixels há em 143.75rem?',
+             options: [
+                {id: 0, alternative: "2.130", isCorrect: false },
+                {id: 1, alternative: "2.200", isCorrect: false },
+                {id: 2, alternative: "2.300", isCorrect: true },
+                {id: 3, alternative: "2.416", isCorrect: false }
+          ],
+       },
+   
+       {
+          question: 'Qual tag é ultilizada para definir a fonte de um texto?',
+             options: [
+                {id: 0, alternative: "font-size", isCorrect: false },
+                {id: 1, alternative: "font-weight", isCorrect: false },
+                {id: 2, alternative: "font-family", isCorrect: true },
+                {id: 3, alternative: "font-style", isCorrect: false }
+          ],
+       },
+   
+       {
+          question: 'Como você escreve "Hello World" em uma caixa de alerta?',
+             options: [
+                {id: 0, alternative: "alertBox('Hello World')", isCorrect: false },
+                {id: 1, alternative: "msgBox('Hello World')", isCorrect: false },
+                {id: 2, alternative: "msg('Hello World')", isCorrect: false },
+                {id: 3, alternative: "alert('Hello World')", isCorrect: true }
+          ],
+       },
+      ]
+
+      const optionClicked = (isCorrect) => {
+         if (isCorrect) {
+           setScore(score + 1);
+         }
+     
+         if (currentQuestion + 1 < questions.length) {
+           setCurrentQuestion(currentQuestion + 1);
+         } else {
+           setShowResults(true);
+         }
+       };
+
+      //  const restartGame = () => {
+      //    setScore(0);
+      //    setCurrentQuestion(0);
+      //    setShowResults(false);
+      //  };
+     
    return (
       <Container>
-               <h1>Pergunta 1</h1>
-                  <h2>Qual a tag utilizada para alterar o título de um projeto HTML?</h2>
-                     <div className="Options" 
-                     onClick={(alternative) => {
-                        if(alternative === answer) {
-                           count +1
-                        }
-                     }}>
-                        <button>Class</button>
-                        <button value={true}>Title</button>
-                        <button value={false}>Classname</button>
-                        <button value={false}>Name</button>
-                     </div>
-                     {/* <section onClick={(value) => {
-                        if(value === true) {
-                           count +1
-                        }
-                     }}>
-                        <button value={false}>Class</button>
-                        <button value={true}>Title</button>
-                        <button value={false}>Classname</button>
-                        <button value={false}>Name</button>
-                     </section> */}
-
-
+         <div className="questionDiv">
+            <h2>Pergunta {currentQuestion + 1} de {questions.length}</h2>
+               <h3 className="questionText">{questions[currentQuestion].question}</h3>
+                  <ul>{questions[currentQuestion].options.map((alternative) => {
+                     return (
+                        <li
+                           key={alternative.id}
+                           onClick={() => optionClicked(alternative.isCorrect)}>
+                              {alternative.alternative}
+                        </li>
+                     );
+                     })}
+                  </ul>
+        </div>
       </Container>
    )
 }

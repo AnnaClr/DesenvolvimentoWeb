@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const Container = styled.div `
-  
+  width: 100%;
   display: flex ;
   justify-content: center;
   align-items: center;
@@ -11,19 +11,27 @@ export const Container = styled.div `
     text-align: center;
    };
 
+   a {
+    width: 50%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   }
+
 
    .startButton {
-    width: 50%;
+    width: 100%;
     height: 7vh;
     margin-top: 30.2rem;
-    border-color: #FAFFA5;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: #6B6B6B;
-    color: white;
-    border-radius: .6rem;
     padding: .8rem;
+    align-items: center;
+    justify-content: center;
+   
+    border: 3px solid #FAFFA5;
+    // border-color: #FAFFA5;
+    // border-radius: .6rem;
+    background: #6B6B6B;
+
+    text-align: center;
+    color: white;
     font-size: 2.4rem;
     cursor: pointer;
    }

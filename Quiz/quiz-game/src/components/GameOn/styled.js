@@ -5,6 +5,7 @@ export const Container = styled.div `
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
   
   h1 {
     color: #FFFFFF;
@@ -14,23 +15,33 @@ export const Container = styled.div `
 
   h2 {
     font-size: 1.8rem;
-    font-family: 'Times New Roman';
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: #FAFFA5;
-    border: solid 1px #FFFFFF;
+    // border: solid 1px #FFFFFF;
 
     margin-top: 1.2rem;
   }
 
-   button {
-    width: 50%;
-    height: 7vh;
-    text-align: center;
-    background-color: #FAFFA5;
-    margin-top: 1rem;
+ul {
+  list-style: none;
+  color: #3B3B3B;
+}
 
-    gap: 1.6rem;
-   }
+li {
+  margin-top: 1.6rem;
+  background-color: #FAFFA5;
+  padding: 1.6rem;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #3B3B3B;
+}
+
+.questionText {
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1.6rem;
+}
 
    
 `
