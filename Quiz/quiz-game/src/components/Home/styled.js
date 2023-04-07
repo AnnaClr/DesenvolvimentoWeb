@@ -26,14 +26,16 @@ export const Container = styled.div `
     justify-content: center;
    
     border: 3px solid #FAFFA5;
-    // border-color: #FAFFA5;
-    // border-radius: .6rem;
     background: #6B6B6B;
 
     text-align: center;
     color: white;
     font-size: 2.4rem;
     cursor: pointer;
+   }
+
+   button:hover {
+      background:  ${({theme}) => theme.colors.neutral5};
    }
 
    

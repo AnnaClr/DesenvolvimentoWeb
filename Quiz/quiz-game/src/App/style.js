@@ -26,4 +26,14 @@ export const Container = styled.div `
     color: white;
 
    }
+
+   img {
+      width: 3rem;
+      height: auto;
+      margin-top: 1.6rem;
+      margin: 1.3rem;
+
+      align-items: center;
+   }
+
 `

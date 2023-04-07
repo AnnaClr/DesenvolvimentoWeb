@@ -23,25 +23,25 @@ export const Container = styled.div `
     margin-top: 1.2rem;
   }
 
-ul {
-  list-style: none;
-  color: #3B3B3B;
-}
+  ul {
+    list-style: none;
+    color: #3B3B3B;
+  }
 
-li {
-  margin-top: 1.6rem;
-  background-color: #FAFFA5;
-  padding: 1.6rem;
-  font-size: 1.6rem;
-  text-align: center;
-  color: #3B3B3B;
-}
+  li {
+    margin-top: 1.6rem;
+    background-color: #FAFFA5;
+    padding: 1.6rem;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #3B3B3B;
+  }
 
-.questionText {
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 1.6rem;
-}
+  .questionText {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.6rem;
+  }
 
    
 `

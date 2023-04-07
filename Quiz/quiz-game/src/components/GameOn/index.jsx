@@ -1,5 +1,6 @@
 import { Container } from "./styled";;
 import React, {useState } from "react";
+import { NavLink } from "react-router-dom"
 
 export default function QuizGame() {
   const [showResults, setShowResults] = useState(false);
@@ -76,22 +77,41 @@ export default function QuizGame() {
       //    setCurrentQuestion(0);
       //    setShowResults(false);
       //  };
+
+      if (questions.length === 0) {
+        return (
+         <NavLink to='/gameover'/>
+        )
+      }
      
    return (
       <Container>
-         <div className="questionDiv">
-            <h2>Pergunta {currentQuestion + 1} de {questions.length}</h2>
-               <h3 className="questionText">{questions[currentQuestion].question}</h3>
-                  <ul>{questions[currentQuestion].options.map((alternative) => {
-                     return (
-                        <li
-                           key={alternative.id}
-                           onClick={() => optionClicked(alternative.isCorrect)}>
-                              {alternative.alternative}
-                        </li>
-                     );
-                     })}
-                  </ul>
+
+         {/* <h2>Score: {score}</h2>
+            <div className="finaResults">
+               <h2>
+                  {score}/{questions.length} acertos (
+                  {(score / questions.length) * 100}%)
+               </h2>
+               <button onClick={() => restartGame()}>Reiniciar</button>
+            </div> */}
+
+
+            <div className="questionDiv">
+               <h2>Pergunta #{currentQuestion + 1}</h2>
+                  <h3 className="questionText">{questions[currentQuestion].question}</h3>
+                     <ul>{questions[currentQuestion].options.map((alternative) => {
+                        return (
+                           <li
+                              key={alternative.id}
+                              onClick={() => optionClicked(alternative.isCorrect)}>
+                                 {alternative.alternative}
+                           </li>
+                        );
+                        })}
+                     </ul>
+
+                  
         </div>
       </Container>
    )
