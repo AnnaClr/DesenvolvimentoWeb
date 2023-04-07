@@ -18,7 +18,20 @@ export function App() {
          <Outlet/>
        </main>
        <footer>
-        <p>Web Developer Course</p>
+            <section className="FooterSocialLogos">
+                <a href="" target="_blank">
+                  <img src="" alt="" />
+                </a>
+
+                <a href="" target="_blank">
+                  <img src="" alt="" />
+                </a>
+
+                <a href="" target="_blank">
+                  <img src="" alt="" />
+                </a>
+            </section>
+          <p>Web Developer Course</p>
        </footer>
 
         {/* {quizState.gameStage === "Start" && <Home/>}
