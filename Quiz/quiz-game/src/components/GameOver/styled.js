@@ -1,18 +1,25 @@
 import styled from "styled-components";
 export const Container = styled.div `
-  
+  width: 100%;
   display: flex ;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   
   h1 {
-    color: #FFFFFF;
+    color: #FAFFA5;
     text-align: center;
    };
 
-   .startButton {
-    width: 50%;
+   p {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+    color: #FFFFFF;
+   }
+
+   .restartButton {
+    width: 16.2rem;
     height: 7vh;
     margin-top: 30.2rem;
     border-color: #FAFFA5;
@@ -21,7 +28,6 @@ export const Container = styled.div `
     text-align: center;
     background: #6B6B6B;
     color: white;
-    border-radius: .4rem;
     padding: .4rem;
     font-size: 2.4rem;
     cursor: pointer;

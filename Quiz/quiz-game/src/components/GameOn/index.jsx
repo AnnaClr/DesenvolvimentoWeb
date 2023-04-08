@@ -1,6 +1,6 @@
-import { Container } from "./styled";;
-import React, {useState } from "react";
-
+import { Container } from "./styled";
+import React, { useState } from "react";
+import { NavLink } from 'react-router-dom';
 
 export default function QuizGame() {
    const [showResults, setShowResults] = useState(false);
@@ -63,7 +63,7 @@ export default function QuizGame() {
        },
       ]
       
-      // Verifica se a alternativa escolhida está correta / add +1 na pontuação
+      // add +1 na pontuação
       const optionClicked = (isCorrect) => {
          if (isCorrect) {
            setScore(score + 1);
@@ -72,8 +72,14 @@ export default function QuizGame() {
          if (currentQuestion + 1 < questions.length) {
            setCurrentQuestion(currentQuestion + 1);
          } else {
-           setShowResults(true);
+            setShowResults(true)
          }
+       };
+
+       const restartGame = () => {
+         setScore(0);
+         setCurrentQuestion(0);
+         setShowResults(false);
        };
 
    return (
@@ -91,6 +97,14 @@ export default function QuizGame() {
                                )})}
                      </ul>
             </div>
+
+            {/* <div>
+               <h2>Fim de jogo!</h2>
+                 <h3>{`Sua pontuação foi de ${score}/${questions.length}`}</h3>
+                     <NavLink to='/'>
+                        <button>Reiniciar</button>
+                     </NavLink>
+            </div> */}
       </Container>
    )
 }
