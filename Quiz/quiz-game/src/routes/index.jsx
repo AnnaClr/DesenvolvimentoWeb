@@ -4,13 +4,13 @@ import { About } from "../components/About"
 import { Home } from "../components/Home"
 import  QuizGame  from "../components/GameOn"
 import { GameOver } from "../components/GameOver"
-//import { PageError } from "../pages/PageError"
+import { PageError } from "../components/PageError"
 
 export const routes = createBrowserRouter([
     {
         path: '/', 
         element: <App/>, 
-        //errorElement: <PageError/>,
+        errorElement: <PageError/>,
         children: [
             {path: '/', element: <Home/>},
             {path: '/about', element: <About/>},

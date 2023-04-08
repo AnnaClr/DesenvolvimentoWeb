@@ -11,14 +11,8 @@ export const Container = styled.div `
     text-align: center;
    };
 
-   a {
-    width: 50%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-   }
-
-
    .startButton {
-    width: 100%;
+    width: 16.2rem;
     height: 7vh;
     margin-top: 30.2rem;
     padding: .8rem;

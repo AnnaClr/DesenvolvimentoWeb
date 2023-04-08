@@ -1,14 +1,17 @@
 import { Container } from "./styled";;
 import React, {useState } from "react";
-import { NavLink } from "react-router-dom"
+
 
 export default function QuizGame() {
-  const [showResults, setShowResults] = useState(false);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [score, setScore] = useState(0);
-  console.log(score);
+   const [showResults, setShowResults] = useState(false);
+   const [currentQuestion, setCurrentQuestion] = useState(0);
+   const [score, setScore] = useState(0);
+   
+   // Pontuação atual
+   console.log(score);
 
-  const questions = [
+   // Perguntas e respostas
+   const questions = [
        {
           question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
              options: [
@@ -59,7 +62,8 @@ export default function QuizGame() {
           ],
        },
       ]
-
+      
+      // Verifica se a alternativa escolhida está correta / add +1 na pontuação
       const optionClicked = (isCorrect) => {
          if (isCorrect) {
            setScore(score + 1);
@@ -72,31 +76,8 @@ export default function QuizGame() {
          }
        };
 
-      //  const restartGame = () => {
-      //    setScore(0);
-      //    setCurrentQuestion(0);
-      //    setShowResults(false);
-      //  };
-
-      if (questions.length === 0) {
-        return (
-         <NavLink to='/gameover'/>
-        )
-      }
-     
    return (
       <Container>
-
-         {/* <h2>Score: {score}</h2>
-            <div className="finaResults">
-               <h2>
-                  {score}/{questions.length} acertos (
-                  {(score / questions.length) * 100}%)
-               </h2>
-               <button onClick={() => restartGame()}>Reiniciar</button>
-            </div> */}
-
-
             <div className="questionDiv">
                <h2>Pergunta #{currentQuestion + 1}</h2>
                   <h3 className="questionText">{questions[currentQuestion].question}</h3>
@@ -107,12 +88,9 @@ export default function QuizGame() {
                               onClick={() => optionClicked(alternative.isCorrect)}>
                                  {alternative.alternative}
                            </li>
-                        );
-                        })}
+                               )})}
                      </ul>
-
-                  
-        </div>
+            </div>
       </Container>
    )
 }
