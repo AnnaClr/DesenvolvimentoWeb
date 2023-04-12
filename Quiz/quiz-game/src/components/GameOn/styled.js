@@ -1,6 +1,5 @@
 import styled from "styled-components";
 export const Container = styled.div `
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,10 +17,15 @@ export const Container = styled.div `
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: #FAFFA5;
-    // border: solid 1px #FFFFFF;
-
     margin-top: 1.2rem;
   }
+
+  h3 {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+   };
 
   ul {
     list-style: none;
