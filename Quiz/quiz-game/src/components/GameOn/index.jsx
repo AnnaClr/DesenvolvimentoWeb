@@ -1,6 +1,6 @@
 import { Container } from "./styled";
 import React, { useState } from "react";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLinkClickHandler } from 'react-router-dom';
 
 export default function QuizGame() {
    const [showResults, setShowResults] = useState(false);
@@ -64,17 +64,27 @@ export default function QuizGame() {
       ]
       
       // add +1 na pontuação
-      const optionClicked = (isCorrect) => {
-         if (isCorrect) {
-           setScore(score + 1);
-         }
+      // const optionClicked = (isCorrect) => {
+         // if (isCorrect) {
+         //   setScore(score + 1);
+         // }
      
-         if (currentQuestion + 1 < questions.length) {
-           setCurrentQuestion(currentQuestion + 1);
-         } else {
-            setShowResults(true)
-         }
-       };
+      //    if (currentQuestion + 1 < questions.length) {
+      //      setCurrentQuestion(currentQuestion + 1);
+      //    } else {
+      //       setShowResults(true)
+      //    }
+      //  };
+
+      const optionClicked = (isCorrect) => {
+         const nextQuestion = currentQuestion + 1;
+            if (isCorrect) {
+               setScore(score + 1);
+            }
+            if (nextQuestion < questions.length) {
+                  setCurrentQuestion(nextQuestion);
+            }
+      }
 
        const restartGame = () => {
          setScore(0);
@@ -97,7 +107,6 @@ export default function QuizGame() {
                                )})}
                      </ul>
             </div>
-
             {/* <div>
                <h2>Fim de jogo!</h2>
                  <h3>{`Sua pontuação foi de ${score}/${questions.length}`}</h3>
