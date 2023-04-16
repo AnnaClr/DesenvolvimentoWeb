@@ -27,18 +27,20 @@ export const Container = styled.div `
     margin-top: 1.6rem;
    };
 
-  ul {
-    list-style: none;
+   .divOptions {
     color: #3B3B3B;
   }
 
-  li {
+  .buttonOptions {
+    width: 100%;
     margin-top: 1.6rem;
     background-color: #FAFFA5;
     padding: 1.6rem;
     font-size: 1.6rem;
     text-align: center;
     color: #3B3B3B;
+
+    cursor: pointer;
   }
 
   .questionText {

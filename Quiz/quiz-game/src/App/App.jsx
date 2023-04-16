@@ -30,7 +30,6 @@ export function App() {
             </section>
           <p>MyFooter</p>
        </footer>
-      
        </Container>
   )
 }

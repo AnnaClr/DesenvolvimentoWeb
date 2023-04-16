@@ -1,16 +1,15 @@
-import { redirect } from 'react-router-dom'
+import { useNavigate } from "react-router-dom"
 import { Container } from "./styled";
 import React, { useState } from "react";
 
-export default function QuizGame() {
-   const [showResults, setShowResults] = useState(false);
+export function QuizGame() {
    const [currentQuestion, setCurrentQuestion] = useState(0);
    const [score, setScore] = useState(0);
    
-   // Pontuação atual
+   // Pontuação atual.
    console.log(score);
 
-   // Perguntas e respostas
+   // Perguntas e respostas.
    const questions = [
        {
           question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
@@ -62,44 +61,39 @@ export default function QuizGame() {
           ],
        },
       ]
-      
-      // add +1 na pontuação
+
+      const navigate = useNavigate()
       const clickOption = (isCorrect) => {
          if (isCorrect) {
+           // Add +1 na pontuação caso a opção esteja correta:
            setScore(score + 1);
          }
-     
          if (currentQuestion + 1 < questions.length) {
+           // Passa para a próxima pergunta:
            setCurrentQuestion(currentQuestion + 1);
          } else {
-            setShowResults(true);
-           alert('Game Over!');
-           return redirect('/gameover')
-
+           // passa para a página final:
+           navigate("/gameover")
          }
        };
 
-      //  const restartGame = () => {
-      //    setScore(0);
-      //    setCurrentQuestion(0);
-      //    setShowResults(false);
-      //  };
-
    return (
+      // Mostra as perguntas e alternativas na tela de forma dinâmica:
       <Container>
             <div className="questionDiv">
                <h2>Pergunta #{currentQuestion + 1}</h2>
                   <h3 className="questionText">{questions[currentQuestion].question}</h3>
-                     <ul>{questions[currentQuestion].options.map((alternative) => {
+                     <div className='divOptions'>{questions[currentQuestion].options.map((alternative) => {
                         return (
-                           <li
+                           <button className='buttonOptions'
                               key={alternative.id}
                               onClick={() => clickOption(alternative.isCorrect)}>
                                  {alternative.alternative}
-                           </li>
+                           </button>
                                )})}
-                     </ul>
+                     </div>
             </div>
+
             <div>
                  <h3>{`Sua pontuação é de ${score}/${questions.length}`}</h3>
             </div>
