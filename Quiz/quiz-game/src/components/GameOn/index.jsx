@@ -2,10 +2,9 @@ import { useNavigate } from "react-router-dom"
 import { Container } from "./styled";
 import React, { useState } from "react";
 
-
 export function QuizGame() {
-   const [currentQuestion, setCurrentQuestion] = useState(0);
-   const [score, setScore] = useState(0);
+   const [currentQuestion, setCurrentQuestion] = useState(0); // Questão atual.
+   const [score, setScore] = useState(0); // Pontuação.
    
    // Pontuação atual.
    console.log(score);
@@ -15,7 +14,7 @@ export function QuizGame() {
        {
           question: 'Qual a tag utilizada para alterar o título de um projeto HTML?',
              options: [
-             {id: 0, alternative: "name", isCorrect: false },
+             {id: 0, alternative: "name", isCorrect: false},
              {id: 1, alternative: "title", isCorrect: true },
              {id: 2, alternative: "class", isCorrect: false },
              {id: 3, alternative: "classname", isCorrect: false }
@@ -69,17 +68,19 @@ export function QuizGame() {
            // Add +1 na pontuação caso a opção esteja correta:
            setScore(score + 1);
          }
+
          if (currentQuestion + 1 < questions.length) {
            // Passa para a próxima pergunta:
            setCurrentQuestion(currentQuestion + 1);
          } else {
-           // passa para a página final:
+           // navega para a página final:
            navigate("/gameover")
          }
        };
 
    return (
-      // Rendeiza as questões de forma dinâmica:
+      // Rendeiza as questões e alternativas de forma dinâmica;
+      // Mostra sua pontuação atual.
       <Container>
             <div className="questionDiv">
                <h2>Pergunta #{currentQuestion + 1}</h2>
@@ -92,6 +93,9 @@ export function QuizGame() {
                                  {alternative.alternative}
                            </button>
                                )})}
+                </div>
+                <div>
+                  <p>Sua pontuação é de {score} / {questions.length}</p>
                 </div>
             </div>
       </Container>

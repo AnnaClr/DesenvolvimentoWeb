@@ -27,6 +27,13 @@ export const Container = styled.div `
     margin-top: 1.6rem;
    };
 
+   p {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+    color: #FAFFA5;
+   }
+
    .divOptions {
     color: #3B3B3B;
   }
@@ -41,13 +48,12 @@ export const Container = styled.div `
     color: #3B3B3B;
 
     cursor: pointer;
-  }
+  } */
 
   .questionText {
     color: #FFFFFF;
     text-align: center;
     font-size: 1.6rem;
   }
-
    
 `

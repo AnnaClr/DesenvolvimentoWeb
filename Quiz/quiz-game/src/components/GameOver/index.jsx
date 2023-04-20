@@ -5,8 +5,7 @@ export function GameOver() {
       return (
           <Container>
               <h1>Fim de jogo!</h1>
-              {/* <p>{`Sua pontuação foi de ${score} / ${questions.length}`}</p> */}
-              {/* <p>Sua pontuação foi de 5/5 acertos!</p> */}
+              <p>Clique no botão abaixo para volta ao menu principal:</p>
             
             <NavLink to='/'>
               <button className="restartButton">Reiniciar</button>
