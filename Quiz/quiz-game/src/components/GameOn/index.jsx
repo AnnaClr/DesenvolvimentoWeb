@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { Container } from "./styled";
 import React, { useState } from "react";
 
+
 export function QuizGame() {
    const [currentQuestion, setCurrentQuestion] = useState(0);
    const [score, setScore] = useState(0);
@@ -78,7 +79,7 @@ export function QuizGame() {
        };
 
    return (
-      // Mostra as perguntas e alternativas na tela de forma dinâmica:
+      // Rendeiza as questões de forma dinâmica:
       <Container>
             <div className="questionDiv">
                <h2>Pergunta #{currentQuestion + 1}</h2>
@@ -91,11 +92,7 @@ export function QuizGame() {
                                  {alternative.alternative}
                            </button>
                                )})}
-                     </div>
-            </div>
-
-            <div>
-                 <h3>{`Sua pontuação é de ${score}/${questions.length}`}</h3>
+                </div>
             </div>
       </Container>
    )
