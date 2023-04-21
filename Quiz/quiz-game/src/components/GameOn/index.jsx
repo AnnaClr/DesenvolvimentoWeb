@@ -79,8 +79,10 @@ export function QuizGame() {
          }
        };
 
-       const incrementScore = () => {
-         localStorage.setItem("userScore", setScore);
+       function incrementScore() {
+         const newScore = score + 1;
+         setScore(newScore);
+         localStorage.setItem("userScore", newScore);
        }
 
    return (
