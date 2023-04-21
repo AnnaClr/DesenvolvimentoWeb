@@ -1,16 +1,27 @@
 import { Container } from "./styled";
 import { NavLink } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
 
 export function GameOver() {
-      return (
-          <Container>
-              <h1>Fim de jogo!</h1>
-              <p>Clique no botão abaixo para volta ao menu principal:</p>
+  const [score, setScore] = useState(0);
+
+  useEffect(() => {
+    const storedScore = localStorage.getItem("userScore");
+    if (storedScore) {
+      setScore(parseInt(storedScore));
+    }
+  }, []);
+
+  return (
+    <Container>
+        <h1>Fim de jogo!</h1>
+          <p>Sua pontuação foi de {score}</p>
             
             <NavLink to='/'>
               <button className="restartButton">Reiniciar</button>
             </NavLink>
-          </Container>
-      )
+    </Container>
+  );
+      
     
 }

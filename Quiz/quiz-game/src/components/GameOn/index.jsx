@@ -61,8 +61,9 @@ export function QuizGame() {
           ],
        },
       ]
-
+      
       const navigate = useNavigate()
+
       const clickOption = (isCorrect) => {
          if (isCorrect) {
            // Add +1 na pontuação caso a opção esteja correta:
@@ -78,6 +79,10 @@ export function QuizGame() {
          }
        };
 
+       const incrementScore = () => {
+         localStorage.setItem("userScore", setScore);
+       }
+
    return (
       // Rendeiza as questões e alternativas de forma dinâmica;
       // Mostra sua pontuação atual.
@@ -87,16 +92,17 @@ export function QuizGame() {
                   <h3 className="questionText">{questions[currentQuestion].question}</h3>
                      <div className='divOptions'>{questions[currentQuestion].options.map((alternative) => {
                         return (
-                           <button className='buttonOptions'
-                              key={alternative.id}
-                              onClick={() => clickOption(alternative.isCorrect)}>
-                                 {alternative.alternative}
+                           <button 
+                           className='buttonOptions'
+                           key={alternative.id}
+                           onClick={() => {clickOption(alternative.isCorrect), incrementScore}}>
+                           {alternative.alternative}
                            </button>
-                               )})}
-                </div>
-                <div>
+                           )})}
+                      </div>
+                {/* <div>
                   <p>Sua pontuação é de {score} / {questions.length}</p>
-                </div>
+                </div> */}
             </div>
       </Container>
    )
