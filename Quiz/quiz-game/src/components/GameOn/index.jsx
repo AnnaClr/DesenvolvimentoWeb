@@ -6,8 +6,8 @@ export function QuizGame() {
    const [currentQuestion, setCurrentQuestion] = useState(0); // Questão atual.
    const [score, setScore] = useState(0); // Pontuação.
    
-   // Pontuação atual.
-   console.log(score);
+   // Pontuação atual:
+   // console.log(score);
 
    // Perguntas e respostas.
    const questions = [
@@ -68,6 +68,7 @@ export function QuizGame() {
          if (isCorrect) {
            // Add +1 na pontuação caso a opção esteja correta:
            setScore(score + 1);
+           localStorage.setItem("userScore", score + 1);
          }
 
          if (currentQuestion + 1 < questions.length) {
@@ -78,12 +79,6 @@ export function QuizGame() {
            navigate("/gameover")
          }
        };
-
-       function incrementScore() {
-         const newScore = score + 1;
-         setScore(newScore);
-         localStorage.setItem("userScore", newScore);
-       }
 
    return (
       // Rendeiza as questões e alternativas de forma dinâmica;
@@ -97,14 +92,13 @@ export function QuizGame() {
                            <button 
                            className='buttonOptions'
                            key={alternative.id}
-                           onClick={() => {clickOption(alternative.isCorrect), incrementScore}}>
+                           onClick={() => {
+                              clickOption(alternative.isCorrect)
+                              }}>
                            {alternative.alternative}
                            </button>
                            )})}
                       </div>
-                {/* <div>
-                  <p>Sua pontuação é de {score} / {questions.length}</p>
-                </div> */}
             </div>
       </Container>
    )

@@ -21,16 +21,17 @@ export const Container = styled.div `
    .restartButton {
     width: 16.2rem;
     height: 7vh;
-    margin-top: 29rem;
-    border-color: #FAFFA5;
-    justify-content: center;
+    margin-top: 30.2rem;
+    padding: .8rem;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+   
+    border: 3px solid #FAFFA5;
     background: #6B6B6B;
+
+    text-align: center;
     color: white;
-    padding: .4rem;
     font-size: 2.4rem;
-    
     cursor: pointer;
 
    }
