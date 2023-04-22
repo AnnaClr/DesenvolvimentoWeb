@@ -16,26 +16,25 @@ export const Container = styled.div `
 
     display: grid;
     gap: 3.2rem;
-    
-    
    };
 
    a {
-      color: #6b6b6b;
-      padding: .2rem;
-      border-radius: .4rem;
-      border-bottom: .2rem solid transparent;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: .4rem;
+      border-bottom: .2rem solid transparent;
+      padding: .2rem;
       gap: .8rem;
+
+      color: #6B6B6B;
    };
 
    a:hover {
-      border-bottom-color: #fAFFA5 ;
+      border-bottom-color: #FAFFA5 ;
    };
 
    .select {
-      color: #fAFFA5;
+      color: #FAFFA5;
    };
 `

@@ -7,7 +7,7 @@ export const Container = styled.div `
   flex-direction: column;
   
   h1 {
-    color: #FFFFFF;
+    color: #FAFFA5;
     text-align: center;
    };
 

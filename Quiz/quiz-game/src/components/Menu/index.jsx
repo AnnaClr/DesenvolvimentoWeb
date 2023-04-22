@@ -2,6 +2,7 @@ import { Container } from "./styled.js"
 import { NavLink } from "react-router-dom"
 import { AiFillHome } from "react-icons/ai"
 import { BsInfoCircleFill } from "react-icons/bs"
+
 export function Menu() {
     return (
         <Container>

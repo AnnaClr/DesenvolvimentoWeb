@@ -15,12 +15,6 @@ export function Header() {
                     <IoMdMenu className="menuIcon" />
                 }
             </button>
-            <div className="logoMenu">
-                <div>
-                  {/* <h1>Quiz</h1> */}
-                  {/* <h3>Curso de Desenvolvimento Web</h3> */}
-                </div>
-            </div>
         </Container>
 
         <div onClick={toggleMenuIcon}>
