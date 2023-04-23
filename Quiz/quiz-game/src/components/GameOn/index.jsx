@@ -63,14 +63,12 @@ export function QuizGame() {
       ]
       
       const navigate = useNavigate()
-
       const clickOption = (isCorrect) => {
          if (isCorrect) {
            // Add +1 na pontuação caso a opção esteja correta:
            setScore(score + 1);
            localStorage.setItem("userScore", score + 1);
          }
-
          if (currentQuestion + 1 < questions.length) {
            // Passa para a próxima pergunta:
            setCurrentQuestion(currentQuestion + 1);
