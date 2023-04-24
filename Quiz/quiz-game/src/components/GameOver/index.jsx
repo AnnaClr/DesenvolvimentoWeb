@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 
 export function GameOver() {
   const [score, setScore] = useState(0);
-
+    // Busca a pontuação na memória do navegador.
   useEffect(() => {
     const storedScore = localStorage.getItem("userScore");
     if (storedScore) {

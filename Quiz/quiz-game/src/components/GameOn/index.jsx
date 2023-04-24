@@ -42,7 +42,7 @@ export function QuizGame() {
        },
    
        {
-          question: 'Qual tag é ultilizada para definir a fonte de um texto?',
+          question: 'Qual tag é utilizada para definir a fonte de um texto?',
              options: [
                 {id: 0, alternative: "font-size", isCorrect: false },
                 {id: 1, alternative: "font-weight", isCorrect: false },
@@ -65,34 +65,35 @@ export function QuizGame() {
       const navigate = useNavigate()
       const clickOption = (isCorrect) => {
          if (isCorrect) {
-           // Add +1 na pontuação caso a opção esteja correta:
-           setScore(score + 1);
-           localStorage.setItem("userScore", score + 1);
-         }
-         if (currentQuestion + 1 < questions.length) {
-           // Passa para a próxima pergunta:
-           setCurrentQuestion(currentQuestion + 1);
-         } else {
-           // navega para a página final:
-           navigate("/gameover")
-         }
-       };
+            // Add +1 na pontuação caso a opção esteja correta:
+            // Armazena a pontuação na memória navegador.
+            const newScore = score + 1
+            setScore(newScore);
+            localStorage.setItem("userScore", newScore);
+          }
+          if (currentQuestion + 1 < questions.length) {
+            // Passa para a próxima pergunta:
+            setCurrentQuestion(currentQuestion + 1);
+          } else {
+            // Navega para a página final:
+            navigate("/gameover")
+          }  
+      }
 
    return (
-      // Rendeiza as questões e alternativas de forma dinâmica;
-      // Mostra sua pontuação atual.
+      // Renderiza as questões e alternativas.;
       <Container>
             <div className="questionDiv">
                <h2>Pergunta #{currentQuestion + 1}</h2>
                   <h3 className="questionText">{questions[currentQuestion].question}</h3>
-                     <div className='divOptions'>{questions[currentQuestion].options.map((alternative) => {
+                     <div className='divOptions'>
+                        {questions[currentQuestion].options.map((alternative) => {
                         return (
                            <button 
                            className='buttonOptions'
                            key={alternative.id}
                            onClick={() => {
-                              clickOption(alternative.isCorrect)
-                              }}>
+                              clickOption(alternative.isCorrect)}}>
                            {alternative.alternative}
                            </button>
                            )})}
