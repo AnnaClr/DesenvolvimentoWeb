@@ -65,7 +65,7 @@ export function QuizGame() {
       const navigate = useNavigate()
       const clickOption = (isCorrect) => {
          if (isCorrect) {
-            // Add +1 na pontuação caso a opção esteja correta:
+            // Add +1 na pontuação caso a opção esteja correta;
             // Armazena a pontuação na memória navegador.
             const newScore = score + 1
             setScore(newScore);
