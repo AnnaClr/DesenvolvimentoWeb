@@ -19,5 +19,6 @@ export const Container = styled.div`
    .menuIcon {
     font-size: 2.4rem;
     color: #FAFAA5;
+    cursor: pointer;
    };
 `

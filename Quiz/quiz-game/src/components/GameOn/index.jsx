@@ -22,7 +22,7 @@ export function QuizGame() {
    },
    
        {
-          question: 'Qual a tag é usada para linkar JavaScript ao HTML?',
+          question: 'Qual a tag usada para linkar JavaScript ao HTML?',
              options: [
              {id: 0, alternative: "javascript", isCorrect: false },
              {id: 1, alternative: "js", isCorrect: false },

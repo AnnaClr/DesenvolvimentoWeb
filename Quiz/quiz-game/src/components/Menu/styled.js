@@ -31,7 +31,7 @@ export const Container = styled.div `
    };
 
    a:hover {
-      border-bottom-color: #FAFFA5 ;
+      border-bottom-color: #FAFFA5;
    };
 
    .select {
