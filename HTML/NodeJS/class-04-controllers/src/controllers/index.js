@@ -12,7 +12,7 @@ module.exports = {
 
     update(req, res) {
         const {id} = req.params
-        res.json({situation: `Update user ${id}`})
+        res.json({situation: `Update user ${zid}`})
         
     },
 
