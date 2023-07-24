@@ -21,7 +21,7 @@ export function FormRegister() {
        .catch((error) => alert(error.response.data))
         
     }
-    // console.log(errors);
+
     return (
         <Container>
             <form onSubmit={handleSubmit(onSubmit)}>

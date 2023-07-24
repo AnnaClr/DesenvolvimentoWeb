@@ -16,8 +16,6 @@ export function FormUpdate({ modalClose, studentData, fetchStudents }) {
     Celular: studentData.Celular
   })
 
-  // console.log(studentDataForm);
-
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -38,6 +36,7 @@ export function FormUpdate({ modalClose, studentData, fetchStudents }) {
       modalClose()
     }).catch((error) => alert(error.response.data))
   }
+
   function deleteStudent() {
     const isDelete = confirm("Deseja deletar o aluno?")
     if (isDelete) {
@@ -69,7 +68,7 @@ export function FormUpdate({ modalClose, studentData, fetchStudents }) {
                 name="ID" 
                 value={studentData.ID}
                 />
-                    <Form.Control.Feedback type="invalid">Campo obrigatório!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Campo obrigatório!</Form.Control.Feedback>
             </Form.Group>
         </Row>
 
@@ -84,7 +83,7 @@ export function FormUpdate({ modalClose, studentData, fetchStudents }) {
                   value={studentDataForm.Nome}
                   onChange={handleInputsChange}
                 />
-                    <Form.Control.Feedback type="invalid">Campo obrigatório!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Campo obrigatório!</Form.Control.Feedback>
             </Form.Group>
         </Row>
 
@@ -128,14 +127,12 @@ export function FormUpdate({ modalClose, studentData, fetchStudents }) {
                 onChange={handleInputsChange}
                 />
                 <Form.Control.Feedback type="invalid">Campo obrigatório!</Form.Control.Feedback>
-        </Form.Group>
+            </Form.Group>
         </Row>
         <Modal.Footer>
             <Button variant="danger" onClick={deleteStudent}>Deletar</Button>
             <Button type="submit" variant="success">Atualizar</Button>
         </Modal.Footer>
-     
-      
     </Form>
   );
 }

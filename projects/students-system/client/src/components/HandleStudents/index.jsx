@@ -20,22 +20,14 @@ export function HandleStudents() {
             student.Cidade.toLowerCase().includes(searchStudent.toLowerCase())
         )
     })
-    // console.log(searchStudent);
 
     const modalOpen = (studentID) => {
         setShowModal(true)
         const student = listStudents.findIndex(student => student.ID == studentID)
         setStudentData(listStudents[student]);
     }
-    // console.log(studentData);
-    const modalClose = () => setShowModal(false)
 
-    // function modalOpen() {
-    //     setShowModal(true)
-    // }
-    // function modalClose() {
-    //     setShowModal(false)
-    // }
+    const modalClose = () => setShowModal(false)
 
     const API = "http://localhost:3000/students"
     function fetchStudents() {
@@ -48,7 +40,6 @@ export function HandleStudents() {
         fetchStudents()
     }, [])
 
-    // console.log(listStudents);
     return (
         <Container>
             <article>
